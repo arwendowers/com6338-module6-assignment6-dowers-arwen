@@ -67,9 +67,11 @@ quiz.appendChild(startQuizBtn)
 
 var currentQuestion = 0
 var correctAnswers = 0
+var timerId
 
 function startTimer(timer) {
-  var timerId = setInterval(function() {
+    clearInterval(timerId)
+    var timerId = setInterval(function() {
     timer.textContent = Number(timer.textContent) - 1
     if (timer.textContent === '0') {
         clearInterval(timerId)
